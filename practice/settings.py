@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#TODO: add media folder to project and add Path here - share folder to access images between host and vm
 
 # Application definition
 
@@ -39,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'sorl.thumbnail',
+
     'feed',
+
 ]
 
 MIDDLEWARE = [

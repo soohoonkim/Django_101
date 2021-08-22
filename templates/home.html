@@ -5,5 +5,11 @@ homepage
 {% endblock %}
 
 {% block body %}
-<h1>Hi Misty!</h1>
+<h1>{{ misty }}</h1>
+<h2>
+    {% for post in posts %}
+        {{ post.text }}
+        <hr>
+    {% endfor %}
+</h2>
 {% endblock %}
