@@ -1,14 +1,18 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
 {% block title %}
 homepage
 {% endblock %}
 
 {% block body %}
-<h1>{{ misty }}</h1>
+<h1>{{ Welcome }}</h1>
 <h2>
     {% for post in posts %}
-        {{ post.text }}
+        {{ post.text }} <br>
+        {% thumbnail post.image "250x250" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
         <hr>
     {% endfor %}
 </h2>

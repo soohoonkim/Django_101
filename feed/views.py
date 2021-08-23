@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from .models import Post
 
 # Create your views here.
@@ -7,7 +7,11 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['misty'] = "Hi, Misty!"
+        context['Welcome'] = "Hello and Welcome! This is a Website Made with Django :)"
         context['posts'] = Post.objects.all()
         return context
 
+class PostDetailView(DetailView):
+    template_name = 'detail.html'
+    model = Post
+    
