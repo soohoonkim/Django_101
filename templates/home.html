@@ -9,10 +9,13 @@ homepage
 <h1>{{ Welcome }}</h1>
 <h2>
     {% for post in posts %}
-        {{ post.text }} <br>
+         <a href="{% url 'feed:detail' post.id %}">
+         {{ post.text }}
+        <br>
         {% thumbnail post.image "250x250" crop="center" as im %}
         <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
         {% endthumbnail %}
+        </a>
         <hr>
     {% endfor %}
 </h2>

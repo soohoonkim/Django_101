@@ -3,6 +3,7 @@
 {% block title %}detail View{% endblock%}
 
 {% block body %}
+    <a href="{% url 'feed:index' %}">&larr; Go Back</a>
     <h4>Text of the post</h4>
     {{ object.text }}
     <h4>Image of the post</h4>
