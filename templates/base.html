@@ -6,6 +6,16 @@
     <title>{% block title %}Default Title{% endblock %}</title>
 </head>
 <body>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li {% if messages.tag %} class="{{ messages.tag }}" {% endif %}>
+                    {{ message }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
     {% block body %}{% endblock %}
 </body>
 </html>
