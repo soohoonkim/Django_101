@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}detail View{% endblock%}
+{% block title %}{{ object.text }}{% endblock%}
 
 {% block body %}
     <a href="{% url 'feed:index' %}">&larr; Go Back</a>

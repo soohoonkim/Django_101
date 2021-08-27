@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Upload a new post{% endblock%}
+
+{% block body %}
+    <a href="{% url 'feed:index' %}">&larr; Go Back</a>
+    <br>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+    <div>
+        <button type="submit">Submit post</button>
+    </div>
+{% endblock %}
