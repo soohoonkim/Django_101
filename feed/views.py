@@ -9,7 +9,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['Welcome'] = "Hello and Welcome! This is a Website Made with Django :)"
+        context['Welcome'] = "Hello and Welcome! This is a Website Made with Django"
         context['posts'] = Post.objects.all().order_by('-id')
         return context
 
